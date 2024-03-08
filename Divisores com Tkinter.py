@@ -38,7 +38,8 @@ janela = tk.Tk()
 janela.configure(bg='black')
 janela.title('Divisores')
 
-titulo = tk.Label(text='Digite um número para ver seus divisores', borderwidth=2, relief='raised', background='pink')
+titulo = tk.Label(text='Digite um número para ver seus divisores', borderwidth=2,
+                  relief='raised', background='pink')
 titulo.grid(row=0, column=0, columnspan=4, padx=10, pady=10, sticky='nswe')
 
 texto = tk.Label(text='Digite um número aqui', foreground='pink', background='black')
