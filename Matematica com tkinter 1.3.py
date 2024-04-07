@@ -29,7 +29,17 @@ class Matematicando:
         if self.numero % 2 == 0:
             self.par_impar = 'é par'
         else:
-            self.par_impar = 'impar'
+            self.par_impar = 'é impar'
+
+    def verificar_primo_ou_nao(self):
+        if len(self.divisores) == 2:
+            self.primo_ou_nao = 'É primo'
+        else:
+            self.primo_ou_nao = 'NÃO primo'
+
+    def mudar_mensagem(self):
+        aviso['fg'] = 'white'
+        aviso['text'] = f'O número {self.numero} {self.par_impar},\n {self.primo_ou_nao}\n e seus divisores são {self.divisores}'
 
     def mostrar_resultados(self):
         try:
@@ -39,6 +49,8 @@ class Matematicando:
             self.numero = num
             self.calcular_divisores()
             self.verificar_par_ou_impar()
+            self.verificar_primo_ou_nao()
+            self.mudar_mensagem()
         except:
             aviso['fg'] = 'red'
             aviso['text'] = 'Erro, por favor\nFaça o que se pede!!'
