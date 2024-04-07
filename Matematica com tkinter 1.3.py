@@ -1,4 +1,3 @@
-from math import sqrt
 from tkinter import ttk
 import tkinter as tk
 
@@ -18,8 +17,31 @@ class Matematicando:
         self.primo_ou_nao = None
         self.numeros_disponiveis = self.__adicionar_numeros()
 
+    def reiniciar_tudo(self):
+        self.divisores.clear()
+
+    def calcular_divisores(self):
+        for c in range(1, self.numero + 1):
+            if self.numero % c == 0:
+                self.divisores.append(c)
+
+    def verificar_par_ou_impar(self):
+        if self.numero % 2 == 0:
+            self.par_impar = 'é par'
+        else:
+            self.par_impar = 'impar'
+
     def mostrar_resultados(self):
-        pass
+        try:
+            self.reiniciar_tudo()
+            num = numero.get()
+            num = int(num)
+            self.numero = num
+            self.calcular_divisores()
+            self.verificar_par_ou_impar()
+        except:
+            aviso['fg'] = 'red'
+            aviso['text'] = 'Erro, por favor\nFaça o que se pede!!'
 
 
 mat = Matematicando()
