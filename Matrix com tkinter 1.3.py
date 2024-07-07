@@ -60,5 +60,4 @@ botao_gerar_matrix = tk.Button(text='Gerar Matrix', bg='#FFB6C1', fg='white', fo
                                command=gerador.comecar)
 botao_gerar_matrix.grid(row=1, column=2, padx=10, pady=10, sticky='nswe')
 
-
 janela.mainloop()
