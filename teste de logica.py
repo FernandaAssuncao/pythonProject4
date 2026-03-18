@@ -6,6 +6,7 @@ class Calculadora:
         self.numero1 = 0
         self.numero2 = 0
         self.resul = 0
+        self.div = []
 
     def soma(self):
         self.resul = self.numero1 + self.numero2
@@ -19,6 +20,33 @@ class Calculadora:
         self.resul = self.numero1 * self.numero2
         print(f'{self.numero1} X {self.numero2} = {self.resul}')
 
+    def __mostrar_divisores(self, lista_num):
+        for c in range(0, len(lista_num)):
+            texto = f'Os divisores de {lista_num[c]} sao '
+            for i in range(0, len(self.div[c])):
+                texto += f'{self.div[c][i]}, '
+            print(texto)
+            texto = ''
+
+    def divisores(self):
+        lista = [self.numero1, self.numero2]
+        div = []
+        for item in lista:
+            for c in range(1, item + 1):
+                if item % c == 0:
+                    div.append(c)
+            self.div.append(div.copy())
+            div.clear()
+        self.__mostrar_divisores(lista)
+
+
+def mudar_numero():
+    num = int(input('Digite o primeiro numero: '))
+    num2 = int(input('Digite o segundo numero: '))
+    calculadora.numero1 = num
+    calculadora.numero2 = num2
+    print('Calculando....')
+
 
 calculadora = Calculadora()
 while True:
@@ -26,21 +54,22 @@ while True:
     [1] adição
     [2] subtração
     [3] multiplicar
-    [4] Sair''')
+    [4] divisores
+    [6] Sair''')
     escolha = int(input('Sua opção: '))
-    num = int(input('Digite o primeiro numero: '))
-    num2 = int(input('Digite o segundo numero: '))
-    calculadora.numero1 = num
-    calculadora.numero2 = num2
-    print('Calculando....')
-    sleep(4)
     if escolha == 1:
+        mudar_numero()
         calculadora.soma()
     elif escolha == 2:
+        mudar_numero()
         calculadora.subtracao()
     elif escolha == 3:
+        mudar_numero()
         calculadora.multiplicar()
     elif escolha == 4:
+        mudar_numero()
+        calculadora.divisores()
+    elif escolha == 6:
         break
     else:
         print('ERRO, ESCOLHA UMA OPÇÃO VALIDA')
