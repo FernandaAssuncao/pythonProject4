@@ -46,6 +46,7 @@ def mudar_numero():
     calculadora.numero1 = num
     calculadora.numero2 = num2
     print('Calculando....')
+    sleep(2)
 
 
 calculadora = Calculadora()
