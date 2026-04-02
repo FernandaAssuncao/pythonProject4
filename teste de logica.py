@@ -28,6 +28,15 @@ class Calculadora:
             print(texto)
             texto = ''
 
+    def primo_ou_nao(self):
+        if len(self.div) == 0:
+            self.divisores()
+        for c in self.div:
+            if len(c) == 2:
+                print(f'O numero é primo')
+            else:
+                print(f'O numero não é primo')
+
     def divisores(self):
         lista = [self.numero1, self.numero2]
         div = []
@@ -56,6 +65,7 @@ while True:
     [2] subtração
     [3] multiplicar
     [4] divisores
+    [5] Primo ou nao?
     [6] Sair''')
     escolha = int(input('Sua opção: '))
     if escolha == 1:
@@ -70,6 +80,9 @@ while True:
     elif escolha == 4:
         mudar_numero()
         calculadora.divisores()
+    elif escolha == 5:
+        mudar_numero()
+        calculadora.primo_ou_nao()
     elif escolha == 6:
         break
     else:
