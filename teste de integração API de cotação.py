@@ -67,3 +67,4 @@ while True:
         cotacao.ver_cotacao()
     elif opcao == 4:
         break
+
